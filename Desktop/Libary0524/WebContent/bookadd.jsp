@@ -7,7 +7,7 @@
 <%
 	String mode;
 	String title = request.getParameter("title");
-	String[] bookInfo;
+	String[] bookInfo;	
 	String readOnly = "";
 	String sendTo = "";
         if(title != null){

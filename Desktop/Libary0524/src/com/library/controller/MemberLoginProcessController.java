@@ -65,7 +65,7 @@ public class MemberLoginProcessController implements Controller{
 			ArrayList<MemberVO> list = service.getList();
 			for(MemberVO memberChk : list)
 			{
-				if((memberChk.getPwd()).equals(pwChk))
+				if((memberChk.getEmail()).equals(id))
 				{
 					member = memberChk;
 				}

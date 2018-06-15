@@ -24,6 +24,11 @@ public class MemberInsertController implements Controller{
 		String address = req.getParameter("address");
 		String phone = req.getParameter("phone");
 		String pwd = req.getParameter("pw");
+		String num = null;
+		if(req.getParameter("num") != null)
+		{
+			num = req.getParameter("num");
+		}
 		System.out.println("name : " + name + "pwd : " + pwd);
 		if(email.isEmpty()||name.isEmpty()||address.isEmpty()||phone.isEmpty()||pwd.isEmpty())
 		{
@@ -37,6 +42,11 @@ public class MemberInsertController implements Controller{
 		{
 			req.setAttribute("error","중복된 아이디가 있습니다.");
 			HttpUtil.forward(req, res,"/useradd.jsp");
+			return;
+		}
+		else if(num != null)
+		{
+			HttpUtil.forward(req, res,"/index.jsp");
 			return;
 		}
 		else
